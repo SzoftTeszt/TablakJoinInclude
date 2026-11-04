@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="Console/Console.csproj" />
+  <Project Path="Kozos/Kozos.csproj" />
+  <Project Path="WinForms/WinForms.csproj" />
+</Solution>

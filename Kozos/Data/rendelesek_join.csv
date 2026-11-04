@@ -1,0 +1,13 @@
+﻿RendelesSzam;UgyfelKod;Datum;Osszeg;Statusz
+R-1001;U001;2026-09-02;18500;Teljesítve
+R-1002;U002;2026-09-04;72900;Teljesítve
+R-1003;U001;2026-09-10;124000;Feldolgozás alatt
+R-1004;U003;2026-09-12;8900;Teljesítve
+R-1005;U004;2026-09-20;45600;Törölve
+R-1006;U005;2026-10-01;218000;Teljesítve
+R-1007;U003;2026-10-03;31500;Feldolgozás alatt
+R-1008;U006;2026-10-05;156000;Teljesítve
+R-1009;U006;2026-10-12;12000;Feldolgozás alatt
+R-1010;U002;2026-10-18;98000;Teljesítve
+R-1011;U001;2026-10-21;44200;Teljesítve
+R-1012;U005;2026-10-25;67500;Feldolgozás alatt
