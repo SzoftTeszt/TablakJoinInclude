@@ -94,6 +94,7 @@
             btnBudapest.TabIndex = 2;
             btnBudapest.Text = "Budapesti JOIN";
             btnBudapest.UseVisualStyleBackColor = true;
+            btnBudapest.Click += btnJoin_Click;
             // 
             // btnJoin
             // 
@@ -103,6 +104,7 @@
             btnJoin.TabIndex = 2;
             btnJoin.Text = "Összes JOIN";
             btnJoin.UseVisualStyleBackColor = true;
+            btnJoin.Click += btnJoin_Click;
             // 
             // dvgJOIN
             // 

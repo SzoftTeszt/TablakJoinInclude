@@ -9,6 +9,9 @@ namespace WinForms
         {
             InitializeComponent();
             CsvSeeder.SeedData();
+            dvgJOIN.MultiSelect = false;
+            dvgJOIN.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dvgJOIN.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -28,7 +31,40 @@ namespace WinForms
 
             lblKivalasztott.Text = $"{kivalasztott.Nev} rendelései ({rendelesek.Count()} db)";
 
-            lstRendelesek.DataSource = rendelesek.OrderByDescending(r=>r.Datum).ToList();
+            lstRendelesek.DataSource = rendelesek.OrderByDescending(r => r.Datum).ToList();
+        }
+
+        private void btnJoin_Click(object sender, EventArgs e)
+        {
+            using RendelesekContext db = new();
+
+            
+
+            Button gomb = (Button)sender;
+           
+
+
+                var lista = db.Rendelesek.Join(db.Ugyfelek,
+                    r => r.UgyfelId,
+                    u => u.Id,
+                    (r, u) => new
+                    {
+                        Rendelés = r.RendelesSzam,
+                        Ügyfél = u.Nev,
+                        Város = u.Varos,
+                        Dátum = r.Datum,
+                        Összeg = r.Osszeg,
+                        Státus = r.Statusz
+                    }).OrderByDescending(x => x.Dátum).ToList();
+
+            if (gomb.Equals(btnBudapest))
+            {
+                lista = lista.Where(x => x.Város == "Budapest").ToList();     
+            }
+          
+            dvgJOIN.DataSource = lista;
+            dvgJOIN.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
         }
     }
 }
