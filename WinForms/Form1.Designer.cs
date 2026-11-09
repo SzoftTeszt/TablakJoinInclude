@@ -37,6 +37,7 @@
             btnJoin = new Button();
             dvgJOIN = new DataGridView();
             label2 = new Label();
+            btnOszesites = new Button();
             ((System.ComponentModel.ISupportInitialize)dvgJOIN).BeginInit();
             SuspendLayout();
             // 
@@ -85,6 +86,7 @@
             btnInclude.TabIndex = 2;
             btnInclude.Text = "Include összesítés";
             btnInclude.UseVisualStyleBackColor = true;
+            btnInclude.Click += btnInclude_Click;
             // 
             // btnBudapest
             // 
@@ -98,7 +100,7 @@
             // 
             // btnJoin
             // 
-            btnJoin.Location = new Point(258, 246);
+            btnJoin.Location = new Point(201, 246);
             btnJoin.Name = "btnJoin";
             btnJoin.Size = new Size(114, 23);
             btnJoin.TabIndex = 2;
@@ -127,6 +129,16 @@
             label2.TabIndex = 4;
             label2.Text = "JOIN eredmény (projekció)";
             // 
+            // btnOszesites
+            // 
+            btnOszesites.Location = new Point(361, 246);
+            btnOszesites.Name = "btnOszesites";
+            btnOszesites.Size = new Size(114, 23);
+            btnOszesites.TabIndex = 2;
+            btnOszesites.Text = "Összesített vásárlás";
+            btnOszesites.UseVisualStyleBackColor = true;
+            btnOszesites.Click += btnOszesites_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -134,6 +146,7 @@
             ClientSize = new Size(672, 540);
             Controls.Add(label2);
             Controls.Add(dvgJOIN);
+            Controls.Add(btnOszesites);
             Controls.Add(btnJoin);
             Controls.Add(btnBudapest);
             Controls.Add(btnInclude);
@@ -160,5 +173,6 @@
         private Button btnJoin;
         private DataGridView dvgJOIN;
         private Label label2;
+        private Button btnOszesites;
     }
 }
